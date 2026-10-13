@@ -60,14 +60,14 @@ os.kill(os.getpid(), 9)
 
 // STEP 2: load the chosen keyframe from disk and animate it.
 function buildStep2(v) {
-  return `#@title 🎬 Step 2 — Animate keyframe (SVD)
+  return ` 🎬 Step 2 — Animate keyframe (SVD)
 !pip install -q diffusers transformers accelerate safetensors
 
 #@markdown ### Settings
-SEED = ${v.seed} #@param {type:"integer"}
-PICK = ${v.pick} #@param [0, 1, 2] {type:"raw"}
-N_CLIPS = ${v.clips} #@param {type:"slider", min:1, max:4, step:1}
-MOTION = ${v.motion} #@param {type:"slider", min:30, max:200, step:5}
+SEED = ${v.seed} {type:"integer"}
+PICK = ${v.pick}  [0, 1, 2] {type:"raw"}
+N_CLIPS = ${v.clips}  {type:"slider", min:1, max:4, step:1}
+MOTION = ${v.motion}  {type:"slider", min:30, max:200, step:5}
 OUTPUT_NAME = ${py(v.outname)} #@param {type:"string"}
 
 import gc
