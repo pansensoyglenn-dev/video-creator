@@ -16,13 +16,14 @@ function safeFileName(name) {
 }
 
 function buildStep1(v) {
-  return `#@title 🎬 Step 1 — Make keyframes (SDXL)
+  return ` 🎬 Step 1 — Make keyframes (SDXL)
 !pip install -q diffusers transformers accelerate safetensors
 
-#@markdown ### Prompts
+
+
 prompt = ${py(v.prompt)} #@param {type:"string"}
-negative_prompt = ${py(v.negative)} #@param {type:"string"}
-SEED = ${v.seed} #@param {type:"integer"}
+negative_prompt = ${py(v.negative)}  {type:"string"}
+SEED = ${v.seed} {type:"integer"}
 
 import os
 import torch
