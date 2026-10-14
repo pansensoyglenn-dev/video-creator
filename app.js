@@ -1,6 +1,5 @@
 const $ = (id) => document.getElementById(id);
 
-// Turn text into a safe single-line Python string literal.
 const py = (s) => JSON.stringify(s.replace(/\s+/g, " ").trim());
 
 function clamp(value, min, max, fallback) {
@@ -15,8 +14,7 @@ function safeFileName(name) {
   return cleaned.toLowerCase().endsWith(".mp4") ? cleaned : cleaned + ".mp4";
 }
 
-// STEP 1: SDXL makes 3 keyframes, saves them, then restarts the session
-// so all RAM is freed before the video model loads.
+
 function buildStep1(v) {
   return `#@title 🎬 Step 1 — Make keyframes (SDXL)
 !pip install -q diffusers transformers accelerate safetensors
